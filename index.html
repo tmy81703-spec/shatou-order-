@@ -34,6 +34,7 @@
             font-size: 13px;
             color: #666;
             margin-top: 5px;
+            line-height: 1.5;
         }
         .step { display: none; }
         .active { display: block; }
@@ -63,7 +64,7 @@
         .product-info h3 {
             margin: 0 0 5px 0;
             color: #800020;
-            font-size: 16px;
+            font-size: 15px;
         }
         .price {
             font-weight: bold;
@@ -88,6 +89,16 @@
             margin-top: 20px;
             padding-top: 15px;
             border-top: 2px dashed #ddd;
+        }
+        .note-box {
+            background-color: #fff8e7;
+            border-left: 4px solid #ffb703;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #444;
         }
         .btn {
             width: 100%;
@@ -155,17 +166,20 @@
         <!-- HEADER -->
         <div class="header">
             <h1>Order Shatou by luv 莎头🦁🦈</h1>
-            <div class="sub-contact">LH gấp: 0334439065 or LH Zalo: 0855012747</div>
+            <div class="sub-contact">
+                Vừa Order đồ Shatou vừa đợi LA28<br>
+                LH Zalo: 0855012747
+            </div>
         </div>
 
         <!-- BƯỚC 1: CHỌN SẢN PHẨM -->
         <div id="step1" class="step active">
             <div class="product-card">
                 <div class="product-left">
-                    <img class="product-img" src="https://drive.google.com/file/d/18JiNkm7VY_VFyGUSGCY3ZfRxmr-LUJrI/view?usp=drivesdk" alt="Áo SYS">
+                    <img class="product-img" src="https://cdn.phototourl.com/free/2026-08-20-160eba2c-8348-4aa4-8d5b-681180108c40.jpg" alt="Huy Chương OLP24">
                     <div class="product-info">
-                        <h3>Áo Li-Ning SYS</h3>
-                        <span class="price">1.090.000 VNĐ</span>
+                        <h3>Huy Chương OLP24</h3>
+                        <span class="price">115.000 VNĐ</span>
                     </div>
                 </div>
                 <input type="number" id="sp1" value="0" min="0" onchange="tinhTongTien()">
@@ -173,13 +187,35 @@
 
             <div class="product-card">
                 <div class="product-left">
-                    <img class="product-img" src="https://drive.google.com/file/d/1sEUclRlZ6uDT2r8EIkwqV4_a4O-AgEar/view?usp=drivesdk" alt="Áo WCQ">
+                    <img class="product-img" src="https://cdn.phototourl.com/free/2026-08-20-2d321dd3-a96b-417d-9f92-7062de24c63c.jpg" alt="Combo 2 Móc khoá">
                     <div class="product-info">
-                        <h3>Áo Li-Ning WCQ</h3>
-                        <span class="price">890.000 VNĐ</span>
+                        <h3>Combo 2 Móc khoá</h3>
+                        <span class="price">80.000 VNĐ</span>
                     </div>
                 </div>
                 <input type="number" id="sp2" value="0" min="0" onchange="tinhTongTien()">
+            </div>
+
+            <div class="product-card">
+                <div class="product-left">
+                    <img class="product-img" src="https://cdn.phototourl.com/free/2026-08-20-f074d608-4be9-426f-b8af-2258a6bd3eed.jpg" alt="Khung ảnh Sun Yingsha">
+                    <div class="product-info">
+                        <h3>Khung ảnh Sun Yingsha</h3>
+                        <span class="price">60.000 VNĐ</span>
+                    </div>
+                </div>
+                <input type="number" id="sp3" value="0" min="0" onchange="tinhTongTien()">
+            </div>
+
+            <div class="product-card">
+                <div class="product-left">
+                    <img class="product-img" src="https://cdn.phototourl.com/free/2026-08-20-b39e3bb0-0ea5-4222-901d-73cd2fd8537c.jpg" alt="Áo">
+                    <div class="product-info">
+                        <h3>Áo</h3>
+                        <span class="price">160.000 VNĐ</span>
+                    </div>
+                </div>
+                <input type="number" id="sp4" value="0" min="0" onchange="tinhTongTien()">
             </div>
 
             <div class="total-box">
@@ -191,6 +227,15 @@
 
         <!-- BƯỚC 2: THÔNG TIN GỬI HÀNG -->
         <div id="step2" class="step">
+            <!-- DÒNG LƯU Ý TRƯỚC KHI ĐIỀN THÔNG TIN -->
+            <div class="note-box">
+                📌 Giá đã nêu trên đã bao gồm tất cả các chi phí sản phẩm gốc, giao dịch, thông quan và vận chuyển quốc tế từ TQ về Việt Nam.<br><br>
+                ⚠️ <b>Lưu ý:</b> Giá này <b>chưa bao gồm phí ship nội địa Việt Nam</b> (từ chỗ shop đến địa chỉ nhà bạn). Đơn hàng shop sẽ ship qua đơn vị vận chuyển SPX và khoản này bạn tự trả tiền cho shipper, cước vận chuyển tuỳ vào số lượng hàng bạn đặt. (rẻ nhất là 17k).<br><br>
+                📦 Hàng order dự kiến về VN sau 5-7 ngày kể từ khi shop TQ phát hàng. (Trong điều kiện thuận lợi).<br><br>
+                ❌ Không giao dịch với người chủ nghĩa hoàn hảo, miễn đổi trả lỗi nhỏ, móp hộp do vận chuyển.<br><br>
+                💳 <b>*Bạn vui lòng chuyển khoản 100% tiền hàng để lên đơn!</b>
+            </div>
+
             <h3>📦 Thông tin nhận hàng</h3>
             <label>Họ và tên người nhận:</label>
             <input type="text" id="hoten" placeholder="Nguyễn Văn A">
@@ -241,24 +286,25 @@
                 <div style="font-size: 16px;"><b>Tổng thanh toán:</b> <b id="recTongTien" style="color: #d90429;"></b></div>
             </div>
 
-            <a id="btnZalo" href="#" target="_blank" class="btn" style="background-color: #0084ff;">💬 NHẮN ZALO GỬI BILL XÁC NHẬN SỚM</a>
+            <a id="btnZalo" href="#" target="_blank" class="btn" style="background-color: #0084ff;">💬 Gửi Bill thanh toán qua Zalo</a>
             <p style="font-size: 12px; color: #777; margin-top: 10px;">Cảm ơn bạn đã ủng hộ <b>Order Shatou by luv 莎头🦁🦈</b>!</p>
         </div>
     </div>
 
     <script>
-        // CẤU HÌNH BOT TELEGRAM ĐÃ ĐƯỢC ĐIỀN CHUẨN XÁC
         const TELEGRAM_TOKEN = '8790308066:AAFodNCov6pr7BRN28rc8x03sJrMtWnxaCc'; 
         const TELEGRAM_CHAT_ID = '7603129653'; 
 
         let tong = 0;
-        let sl1 = 0;
-        let sl2 = 0;
+        let sl1 = 0, sl2 = 0, sl3 = 0, sl4 = 0;
 
         function tinhTongTien() {
             sl1 = parseInt(document.getElementById('sp1').value) || 0;
             sl2 = parseInt(document.getElementById('sp2').value) || 0;
-            tong = (sl1 * 1090000) + (sl2 * 890000);
+            sl3 = parseInt(document.getElementById('sp3').value) || 0;
+            sl4 = parseInt(document.getElementById('sp4').value) || 0;
+
+            tong = (sl1 * 115000) + (sl2 * 80000) + (sl3 * 60000) + (sl4 * 160000);
             document.getElementById('tongTien').innerText = tong.toLocaleString('vi-VN');
         }
 
@@ -297,10 +343,8 @@
             let sdt = document.getElementById('sdt').value.trim();
             let diachi = document.getElementById('diachi').value.trim();
             
-            // Tạo mã đơn hàng tự động
             let maDon = "#ST-" + Math.floor(1000 + Math.random() * 9000);
 
-            // Điền thông tin vào Phiếu Xác Nhận Đơn Hàng cho khách
             document.getElementById('recMaDon').innerText = maDon;
             document.getElementById('recHoTen').innerText = hoten;
             document.getElementById('recSDT').innerText = sdt;
@@ -308,22 +352,36 @@
             document.getElementById('recTongTien').innerText = tong.toLocaleString('vi-VN') + " VNĐ";
 
             let chiTietStr = "";
-            if (sl1 > 0) chiTietStr += `• Áo Li-Ning SYS: ${sl1} cái<br>`;
-            if (sl2 > 0) chiTietStr += `• Áo Li-Ning WCQ: ${sl2} cái<br>`;
+            let messageProducts = "";
+            
+            if (sl1 > 0) {
+                chiTietStr += `• Huy Chương OLP24: ${sl1} cái<br>`;
+                messageProducts += `🏅 *Huy Chương OLP24:* ${sl1} cái\n`;
+            }
+            if (sl2 > 0) {
+                chiTietStr += `• Combo 2 Móc khoá: ${sl2} cái<br>`;
+                messageProducts += `🔑 *Combo 2 Móc khoá:* ${sl2} cái\n`;
+            }
+            if (sl3 > 0) {
+                chiTietStr += `• Khung ảnh Sun Yingsha: ${sl3} cái<br>`;
+                messageProducts += `🖼 *Khung ảnh Sun Yingsha:* ${sl3} cái\n`;
+            }
+            if (sl4 > 0) {
+                chiTietStr += `• Áo: ${sl4} cái<br>`;
+                messageProducts += `👕 *Áo:* ${sl4} cái\n`;
+            }
+
             document.getElementById('recChiTiet').innerHTML = chiTietStr;
 
-            // Link nhắn Zalo tự động điền sẵn nội dung tin nhắn gửi tới Zalo 0855012747
             let zaloMsg = `Chào Shop, mình vừa đặt đơn ${maDon} (${hoten} - ${sdt}). Mình đã chuyển khoản thành công, Shop xác nhận giúp mình nhé!`;
             document.getElementById('btnZalo').href = `https://zalo.me/0855012747?text=${encodeURIComponent(zaloMsg)}`;
 
-            // Gửi tin nhắn thông báo tự động về Telegram cho bạn
             let message = `🛒 *ĐƠN HÀNG MỚI (${maDon})* 🚀\n\n` +
                           `👤 *Khách hàng:* ${hoten}\n` +
                           `📞 *SĐT:* ${sdt}\n` +
                           `🏠 *Địa chỉ:* ${diachi}\n` +
                           `-------------------------\n` +
-                          `👕 *Áo SYS:* ${sl1} cái\n` +
-                          `👕 *Áo WCQ:* ${sl2} cái\n` +
+                          messageProducts +
                           `💰 *TỔNG TIỀN:* ${tong.toLocaleString('vi-VN')} VNĐ\n\n` +
                           `📌 *Khách đã bấm xác nhận chuyển khoản!*`;
 
