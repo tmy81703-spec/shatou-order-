@@ -138,7 +138,7 @@
         <div id="step1" class="step active">
             <div class="product-card">
                 <div class="product-left">
-                    <img class="product-img" src="ao-sys.jpg" alt="Áo SYS">
+                    <img class="product-img" src="https://i.ibb.co/3kWy5Vq/ao-sys.jpg" alt="Áo SYS">
                     <div class="product-info">
                         <h3>Áo Li-Ning SYS</h3>
                         <span class="price">1.090.000 VNĐ</span>
@@ -149,7 +149,7 @@
 
             <div class="product-card">
                 <div class="product-left">
-                    <img class="product-img" src="ao-wcq.jpg" alt="Áo WCQ">
+                    <img class="product-img" src="https://i.ibb.co/mSRW30W/ao-wcq.jpg" alt="Áo WCQ">
                     <div class="product-info">
                         <h3>Áo Li-Ning WCQ</h3>
                         <span class="price">890.000 VNĐ</span>
@@ -245,7 +245,6 @@
             let noiDungCK = sdt + " " + hoten;
             document.getElementById('ndChuyenKhoan').innerText = noiDungCK;
 
-            // Tạo link VietQR động tự chèn STK MB Bank + Số tiền + Nội dung CK
             let qrUrl = `https://img.vietqr.io/image/MB-16291066778899-compact2.png?amount=${tong}&addInfo=${encodeURIComponent(noiDungCK)}&accountName=BUI%20NGUYEN%20THAO%20MY`;
             document.getElementById('qrDynamic').src = qrUrl;
 
