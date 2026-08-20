@@ -58,6 +58,7 @@
             height: 75px;
             border-radius: 8px;
             object-fit: cover;
+            border: 1px solid #ffa6b6;
         }
         .product-info h3 {
             margin: 0 0 5px 0;
@@ -100,6 +101,10 @@
             cursor: pointer;
             margin-top: 15px;
             transition: 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            box-sizing: border-box;
+            text-align: center;
         }
         .btn:hover { background-color: #ef233c; }
         .qr-box {
@@ -123,6 +128,25 @@
             font-size: 13px;
             margin-bottom: 10px;
         }
+        .receipt-card {
+            background: #f8f9fa;
+            border: 1px dashed #d90429;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: left;
+            margin: 15px 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .receipt-title {
+            text-align: center;
+            font-weight: bold;
+            color: #d90429;
+            font-size: 16px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -138,7 +162,7 @@
         <div id="step1" class="step active">
             <div class="product-card">
                 <div class="product-left">
-                    <img class="product-img" src="https://i.ibb.co/3kWy5Vq/ao-sys.jpg" alt="Áo SYS">
+                    <img class="product-img" src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=300" alt="Áo SYS">
                     <div class="product-info">
                         <h3>Áo Li-Ning SYS</h3>
                         <span class="price">1.090.000 VNĐ</span>
@@ -149,7 +173,7 @@
 
             <div class="product-card">
                 <div class="product-left">
-                    <img class="product-img" src="https://i.ibb.co/mSRW30W/ao-wcq.jpg" alt="Áo WCQ">
+                    <img class="product-img" src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=300" alt="Áo WCQ">
                     <div class="product-info">
                         <h3>Áo Li-Ning WCQ</h3>
                         <span class="price">890.000 VNĐ</span>
@@ -192,25 +216,41 @@
                 <p style="margin: 5px 0 0 0; font-size: 14px;">Quét mã QR tự động điền số tiền:</p>
                 <h2 id="sotienNoi" style="color: #d90429; margin: 5px 0;">0 VNĐ</h2>
                 
-                <!-- TỰ ĐỘNG TẠO VIETQR MB BANK CHÍNH CHỦ -->
                 <img id="qrDynamic" class="qr-img" src="" alt="Mã QR VietQR">
                 
                 <p style="font-size: 13px; color: #555; margin-top: 5px;">Nội dung CK: <b id="ndChuyenKhoan" style="color: #000;">---</b></p>
             </div>
 
-            <button class="btn" style="background-color: #28a745;" onclick="xacNhanChuyenKhoan()">XÁC NHẬN ĐÃ CHUYỂN KHỎAN ✅</button>
+            <button class="btn" id="btnConfirm" style="background-color: #28a745;" onclick="xacNhanChuyenKhoan()">XÁC NHẬN ĐÃ CHUYỂN KHỎAN ✅</button>
         </div>
 
-        <!-- BƯỚC 4: HOÀN TẤT -->
+        <!-- BƯỚC 4: HOÀN TẤT & PHIẾU XÁC NHẬN ĐƠN HÀNG -->
         <div id="step4" class="step" style="text-align: center;">
-            <h2 style="color: #28a745;">🎉 ĐẶT HÀNG THÀNH CÔNG!</h2>
-            <p>Hệ thống đã ghi nhận đơn hàng của bạn.</p>
-            <p>Tớ sẽ kiểm tra tài khoản MB Bank và liên hệ xác nhận qua SĐT/Zalo ngay nhé!</p>
-            <p style="margin-top: 20px;">Cảm ơn bạn đã ủng hộ <b>Order Shatou by luv 莎头🦁🦈</b>!</p>
+            <h2 style="color: #28a745; margin-bottom: 5px;">🎉 ĐẶT HÀNG THÀNH CÔNG!</h2>
+            <p style="font-size: 14px; color: #555; margin-top: 0;">Vui lòng chụp lại màn hình xác nhận đơn hàng dưới đây:</p>
+
+            <div class="receipt-card">
+                <div class="receipt-title">XÁC NHẬN ĐƠN HÀNG <span id="recMaDon"></span></div>
+                <div><b>Người nhận:</b> <span id="recHoTen"></span></div>
+                <div><b>SĐT:</b> <span id="recSDT"></span></div>
+                <div><b>Địa chỉ:</b> <span id="recDiaChi"></span></div>
+                <hr style="border: 0; border-top: 1px dashed #ccc; margin: 8px 0;">
+                <div><b>Sản phẩm đặt:</b></div>
+                <div id="recChiTiet" style="padding-left: 10px; color: #444;"></div>
+                <hr style="border: 0; border-top: 1px dashed #ccc; margin: 8px 0;">
+                <div style="font-size: 16px;"><b>Tổng thanh toán:</b> <b id="recTongTien" style="color: #d90429;"></b></div>
+            </div>
+
+            <a id="btnZalo" href="#" target="_blank" class="btn" style="background-color: #0084ff;">💬 NHẮN ZALO GỬI BILL XÁC NHẬN SỚM</a>
+            <p style="font-size: 12px; color: #777; margin-top: 10px;">Cảm ơn bạn đã ủng hộ <b>Order Shatou by luv 莎头🦁🦈</b>!</p>
         </div>
     </div>
 
     <script>
+        // CẤU HÌNH BOT TELEGRAM ĐÃ ĐƯỢC ĐIỀN CHUẨN XÁC
+        const TELEGRAM_TOKEN = '8790308066:AAFodNCov6pr7BRN28rc8x03sJrMtWnxaCc'; 
+        const TELEGRAM_CHAT_ID = '7603129653'; 
+
         let tong = 0;
         let sl1 = 0;
         let sl2 = 0;
@@ -253,6 +293,50 @@
         }
 
         function xacNhanChuyenKhoan() {
+            let hoten = document.getElementById('hoten').value.trim();
+            let sdt = document.getElementById('sdt').value.trim();
+            let diachi = document.getElementById('diachi').value.trim();
+            
+            // Tạo mã đơn hàng tự động
+            let maDon = "#ST-" + Math.floor(1000 + Math.random() * 9000);
+
+            // Điền thông tin vào Phiếu Xác Nhận Đơn Hàng cho khách
+            document.getElementById('recMaDon').innerText = maDon;
+            document.getElementById('recHoTen').innerText = hoten;
+            document.getElementById('recSDT').innerText = sdt;
+            document.getElementById('recDiaChi').innerText = diachi;
+            document.getElementById('recTongTien').innerText = tong.toLocaleString('vi-VN') + " VNĐ";
+
+            let chiTietStr = "";
+            if (sl1 > 0) chiTietStr += `• Áo Li-Ning SYS: ${sl1} cái<br>`;
+            if (sl2 > 0) chiTietStr += `• Áo Li-Ning WCQ: ${sl2} cái<br>`;
+            document.getElementById('recChiTiet').innerHTML = chiTietStr;
+
+            // Link nhắn Zalo tự động điền sẵn nội dung tin nhắn gửi tới Zalo 0855012747
+            let zaloMsg = `Chào Shop, mình vừa đặt đơn ${maDon} (${hoten} - ${sdt}). Mình đã chuyển khoản thành công, Shop xác nhận giúp mình nhé!`;
+            document.getElementById('btnZalo').href = `https://zalo.me/0855012747?text=${encodeURIComponent(zaloMsg)}`;
+
+            // Gửi tin nhắn thông báo tự động về Telegram cho bạn
+            let message = `🛒 *ĐƠN HÀNG MỚI (${maDon})* 🚀\n\n` +
+                          `👤 *Khách hàng:* ${hoten}\n` +
+                          `📞 *SĐT:* ${sdt}\n` +
+                          `🏠 *Địa chỉ:* ${diachi}\n` +
+                          `-------------------------\n` +
+                          `👕 *Áo SYS:* ${sl1} cái\n` +
+                          `👕 *Áo WCQ:* ${sl2} cái\n` +
+                          `💰 *TỔNG TIỀN:* ${tong.toLocaleString('vi-VN')} VNĐ\n\n` +
+                          `📌 *Khách đã bấm xác nhận chuyển khoản!*`;
+
+            fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    chat_id: TELEGRAM_CHAT_ID,
+                    text: message,
+                    parse_mode: 'Markdown'
+                })
+            });
+
             document.getElementById('step3').classList.remove('active');
             document.getElementById('step4').classList.add('active');
         }
