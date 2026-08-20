@@ -34,7 +34,6 @@
             font-size: 13px;
             color: #666;
             margin-top: 5px;
-            line-height: 1.5;
         }
         .step { display: none; }
         .active { display: block; }
@@ -64,7 +63,7 @@
         .product-info h3 {
             margin: 0 0 5px 0;
             color: #800020;
-            font-size: 15px;
+            font-size: 16px;
         }
         .price {
             font-weight: bold;
@@ -89,16 +88,6 @@
             margin-top: 20px;
             padding-top: 15px;
             border-top: 2px dashed #ddd;
-        }
-        .note-box {
-            background-color: #fff8e7;
-            border-left: 4px solid #ffb703;
-            padding: 12px 15px;
-            margin-bottom: 20px;
-            border-radius: 6px;
-            font-size: 13px;
-            line-height: 1.6;
-            color: #444;
         }
         .btn {
             width: 100%;
@@ -166,17 +155,15 @@
         <!-- HEADER -->
         <div class="header">
             <h1>Order Shatou by luv 莎头🦁🦈</h1>
-            <div class="sub-contact">
-                Vừa Order đồ Shatou vừa đợi LA28<br>
-                LH Zalo: 0855012747
-            </div>
+            <div class="sub-contact">Vừa Order đồ Shatou vừa đợi LA28<br>LH Zalo: 0855012747</div>
         </div>
 
         <!-- BƯỚC 1: CHỌN SẢN PHẨM -->
         <div id="step1" class="step active">
+            <!-- Sản phẩm 1 -->
             <div class="product-card">
                 <div class="product-left">
-                    <img class="product-img" src="https://sf-static.upanhlaylink.com/view/image_20260820ec23959bef0839101aa45ae3afd014d0.jpg" alt="Huy Chương OLP24">
+                    <img class="product-img" src="huychuong.JPG" alt="Huy Chương OLP24">
                     <div class="product-info">
                         <h3>Huy Chương OLP24</h3>
                         <span class="price">115.000 VNĐ</span>
@@ -185,9 +172,10 @@
                 <input type="number" id="sp1" value="0" min="0" onchange="tinhTongTien()">
             </div>
 
+            <!-- Sản phẩm 2 -->
             <div class="product-card">
                 <div class="product-left">
-                    <img class="product-img" src="https://sf-static.upanhlaylink.com/view/image_20260820482a003a18c52f0f06a3a5cdd92dbe7f.jpg" alt="Combo 2 Móc khoá">
+                    <img class="product-img" src="mockhoa.JPG" alt="Combo 2 Móc khoá">
                     <div class="product-info">
                         <h3>Combo 2 Móc khoá</h3>
                         <span class="price">80.000 VNĐ</span>
@@ -196,9 +184,10 @@
                 <input type="number" id="sp2" value="0" min="0" onchange="tinhTongTien()">
             </div>
 
+            <!-- Sản phẩm 3 -->
             <div class="product-card">
                 <div class="product-left">
-                    <img class="product-img" src="https://sf-static.upanhlaylink.com/view/image_20260820d2329218873af2c8b7702ea4306b60ba.jpg" alt="Khung ảnh Sun Yingsha 8 inch">
+                    <img class="product-img" src="khunganh.JPG" alt="Khung ảnh Sun Yingsha">
                     <div class="product-info">
                         <h3>Khung ảnh Sun Yingsha</h3>
                         <span class="price">60.000 VNĐ</span>
@@ -207,9 +196,10 @@
                 <input type="number" id="sp3" value="0" min="0" onchange="tinhTongTien()">
             </div>
 
+            <!-- Sản phẩm 4 -->
             <div class="product-card">
                 <div class="product-left">
-                    <img class="product-img" src="https://cdn.phototourl.com/free/2026-08-20-b39e3bb0-0ea5-4222-901d-73cd2fd8537c.jpg" alt="Áo">
+                    <img class="product-img" src="https://cdn.phototour1.com/free/2026-08-20-b39e3bb0-0ea5-4222-901d-73cd2fd8537c.jpg" alt="Áo">
                     <div class="product-info">
                         <h3>Áo</h3>
                         <span class="price">160.000 VNĐ</span>
@@ -227,15 +217,6 @@
 
         <!-- BƯỚC 2: THÔNG TIN GỬI HÀNG -->
         <div id="step2" class="step">
-            <!-- DÒNG LƯU Ý TRƯỚC KHI ĐIỀN THÔNG TIN -->
-            <div class="note-box">
-                📌 Giá đã nêu trên đã bao gồm tất cả các chi phí sản phẩm gốc, giao dịch, thông quan và vận chuyển quốc tế từ TQ về Việt Nam.<br><br>
-                ⚠️ <b>Lưu ý:</b> Giá này <b>chưa bao gồm phí ship nội địa Việt Nam</b> (từ chỗ shop đến địa chỉ nhà bạn). Đơn hàng shop sẽ ship qua đơn vị vận chuyển SPX và khoản này bạn tự trả tiền cho shipper, cước vận chuyển tuỳ vào số lượng hàng bạn đặt. (rẻ nhất là 17k).<br><br>
-                📦 Hàng order dự kiến về VN sau 5-7 ngày kể từ khi shop TQ phát hàng. (Trong điều kiện thuận lợi).<br><br>
-                ❌ Không giao dịch với người chủ nghĩa hoàn hảo, miễn đổi trả lỗi nhỏ, móp hộp do vận chuyển.<br><br>
-                💳 <b>*Bạn vui lòng chuyển khoản 100% tiền hàng để lên đơn!</b>
-            </div>
-
             <h3>📦 Thông tin nhận hàng</h3>
             <label>Họ và tên người nhận:</label>
             <input type="text" id="hoten" placeholder="Nguyễn Văn A">
@@ -286,7 +267,7 @@
                 <div style="font-size: 16px;"><b>Tổng thanh toán:</b> <b id="recTongTien" style="color: #d90429;"></b></div>
             </div>
 
-            <a id="btnZalo" href="#" target="_blank" class="btn" style="background-color: #0084ff;">💬 Gửi Bill thanh toán qua Zalo</a>
+            <a id="btnZalo" href="#" target="_blank" class="btn" style="background-color: #0084ff;">💬 NHẮN ZALO GỬI BILL XÁC NHẬN SỚM</a>
             <p style="font-size: 12px; color: #777; margin-top: 10px;">Cảm ơn bạn đã ủng hộ <b>Order Shatou by luv 莎头🦁🦈</b>!</p>
         </div>
     </div>
@@ -352,23 +333,23 @@
             document.getElementById('recTongTien').innerText = tong.toLocaleString('vi-VN') + " VNĐ";
 
             let chiTietStr = "";
-            let messageProducts = "";
-            
+            let msgDetails = "";
+
             if (sl1 > 0) {
                 chiTietStr += `• Huy Chương OLP24: ${sl1} cái<br>`;
-                messageProducts += `🏅 *Huy Chương OLP24:* ${sl1} cái\n`;
+                msgDetails += `🏅 *Huy Chương OLP24:* ${sl1} cái\n`;
             }
             if (sl2 > 0) {
                 chiTietStr += `• Combo 2 Móc khoá: ${sl2} cái<br>`;
-                messageProducts += `🔑 *Combo 2 Móc khoá:* ${sl2} cái\n`;
+                msgDetails += `🔑 *Combo 2 Móc khoá:* ${sl2} cái\n`;
             }
             if (sl3 > 0) {
                 chiTietStr += `• Khung ảnh Sun Yingsha: ${sl3} cái<br>`;
-                messageProducts += `🖼 *Khung ảnh Sun Yingsha:* ${sl3} cái\n`;
+                msgDetails += `🖼 *Khung ảnh Sun Yingsha:* ${sl3} cái\n`;
             }
             if (sl4 > 0) {
                 chiTietStr += `• Áo: ${sl4} cái<br>`;
-                messageProducts += `👕 *Áo:* ${sl4} cái\n`;
+                msgDetails += `👕 *Áo:* ${sl4} cái\n`;
             }
 
             document.getElementById('recChiTiet').innerHTML = chiTietStr;
@@ -381,7 +362,7 @@
                           `📞 *SĐT:* ${sdt}\n` +
                           `🏠 *Địa chỉ:* ${diachi}\n` +
                           `-------------------------\n` +
-                          messageProducts +
+                          msgDetails +
                           `💰 *TỔNG TIỀN:* ${tong.toLocaleString('vi-VN')} VNĐ\n\n` +
                           `📌 *Khách đã bấm xác nhận chuyển khoản!*`;
 
