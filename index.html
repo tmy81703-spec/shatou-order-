@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Shatou Corner - Order Đồ Sun Yingsha</title>
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #d90429;
+            margin-bottom: 10px;
+        }
+        .header h1 {
+            color: #d90429;
+            margin: 5px 0;
+        }
+        .product-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff0f3;
+            padding: 12px 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ffccd5;
+        }
+        .product-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .product-img {
+            width: 65px;
+            height: 65px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid #ffa6b6;
+        }
+        .product-info h3 {
+            margin: 0 0 5px 0;
+            color: #800020;
+            font-size: 16px;
+        }
+        .price {
+            font-weight: bold;
+            color: #d90429;
+            font-size: 14px;
+        }
+        input[type="number"] {
+            width: 50px;
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            text-align: center;
+            font-size: 15px;
+        }
+        .total-box {
+            text-align: right;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px dashed #ddd;
+        }
+        .btn-order {
+            width: 100%;
+            background-color: #d90429;
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+        .btn-order:hover {
+            background-color: #ef233c;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <!-- Ảnh Avatar Sun Yingsha -->
+            <img class="avatar" src="httpgoogleusercontent.com/image_collection/image_retrieval/10460534214415905659_0" alt="Sun Yingsha">
+            <h1>🏓 SHATOU CORNER 🏓</h1>
+            <p>Trang Order Merch & Phụ Kiện Sun Yingsha</p>
+        </div>
+
+        <!-- Món 1 -->
+        <div class="product-card">
+            <div class="product-left">
+                <img class="product-img" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=200" alt="Áo">
+                <div class="product-info">
+                    <h3>Áo Thi Đấu Li-Ning Tôn Dĩnh Sa</h3>
+                    <span class="price">450.000 VNĐ</span>
+                </div>
+            </div>
+            <input type="number" id="sp1" value="0" min="0" onchange="tinhTongTien()">
+        </div>
+
+        <!-- Món 2 -->
+        <div class="product-card">
+            <div class="product-left">
+                <img class="product-img" src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=200" alt="Móc khóa">
+                <div class="product-info">
+                    <h3>Móc Khóa / Card Swing Shatou</h3>
+                    <span class="price">80.000 VNĐ</span>
+                </div>
+            </div>
+            <input type="number" id="sp2" value="0" min="0" onchange="tinhTongTien()">
+        </div>
+
+        <!-- Món 3 -->
+        <div class="product-card">
+            <div class="product-left">
+                <img class="product-img" src="https://images.unsplash.com/photo-1611251106001-92f72f05cf00?w=200" alt="Bao vợt">
+                <div class="product-info">
+                    <h3>Bao Vợt Bóng Bàn Chuyên Dụng</h3>
+                    <span class="price">250.000 VNĐ</span>
+                </div>
+            </div>
+            <input type="number" id="sp3" value="0" min="0" onchange="tinhTongTien()">
+        </div>
+
+        <div class="total-box">
+            Tổng tiền: <span id="tongTien" style="color: #d90429;">0</span> VNĐ
+        </div>
+
+        <button class="btn-order" onclick="guiOrder()">GỬI ORDER NGAY ✨</button>
+    </div>
+
+    <script>
+        function tinhTongTien() {
+            let sl1 = document.getElementById('sp1').value * 450000;
+            let sl2 = document.getElementById('sp2').value * 80000;
+            let sl3 = document.getElementById('sp3').value * 250000;
+
+            let tong = sl1 + sl2 + sl3;
+            document.getElementById('tongTien').innerText = tong.toLocaleString('vi-VN');
+        }
+
+        function guiOrder() {
+            let tong = document.getElementById('tongTien').innerText;
+            if (tong === "0") {
+                alert("Bạn chưa chọn món nào hết á!");
+            } else {
+                alert("Xác nhận order thành công! Tổng đơn của bạn là: " + tong + " VNĐ.\n\nTớ sẽ liên hệ lại để chốt đơn nhé!");
+            }
+        }
+    </script>
+
+</body>
+</html>
+
