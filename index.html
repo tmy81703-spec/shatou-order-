@@ -107,6 +107,22 @@
             text-align: center;
         }
         .btn:hover { background-color: #ef233c; }
+        
+        /* BẢNG LƯU Ý MUA HÀNG chuẩn văn bản cậu gửi */
+        .notice-box {
+            background: #fff8e7;
+            border: 1px solid #ffe0b2;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #4e342e;
+        }
+        .notice-box p {
+            margin: 0 0 8px 0;
+        }
+
         .qr-box {
             text-align: center;
             background: #f8f9fa;
@@ -199,7 +215,7 @@
             <!-- Sản phẩm 4 -->
             <div class="product-card">
                 <div class="product-left">
-                    <img class="product-img" src="ao.JPG" alt="Áo">
+                    <img class="product-img" src="ao." alt="Áo">
                     <div class="product-info">
                         <h3>Áo</h3>
                         <span class="price">160.000 VNĐ</span>
@@ -210,6 +226,15 @@
 
             <div class="total-box">
                 Tổng tiền: <span id="tongTien" style="color: #d90429;">0</span> VNĐ
+            </div>
+
+            <!-- NỘI DUNG LƯU Ý ĐÚNG CHUẨN CỦA BẠN -->
+            <div class="notice-box">
+                <p>Giá đã nêu trên đã bao gồm tất cả các <b>chi phí sản phẩm gốc, giao dịch, thông quan và vận chuyển quốc tế</b> từ TQ về Việt Nam.</p>
+                <p>⚠️ <b>Lưu ý:</b> Giá này <b>chưa bao gồm phí ship nội địa Việt Nam</b> (từ chỗ shop đến địa chỉ nhà bạn). Đơn hàng shop sẽ ship qua đơn vị vận chuyển SPX... và khoản này bạn tự trả tiền cho shipper, cước vận chuyển tuỳ vào số lượng hàng bạn đặt (rẻ nhất là 17k).</p>
+                <p>📦 Hàng order dự kiến về VN sau 5-7 ngày kể từ khi shop TQ phát hàng.</p>
+                <p>❌ Không giao dịch với người chủ nghĩa hoàn hảo, miễn đổi trả khi hộp méo do quá trình vận chuyển, cân nhắc kỹ.</p>
+                <p style="color: #d90429; font-weight: bold; margin-bottom: 0;">*Bạn vui lòng chuyển khoản 100% tiền hàng để lên đơn!</p>
             </div>
 
             <button class="btn" onclick="sangBuoc2()">GỬI ORDER NGAY ✨</button>
@@ -245,15 +270,19 @@
                 <img id="qrDynamic" class="qr-img" src="" alt="Mã QR VietQR">
                 
                 <p style="font-size: 13px; color: #555; margin-top: 5px;">Nội dung CK: <b id="ndChuyenKhoan" style="color: #000;">---</b></p>
+                
+                <div style="background: #fff3cd; color: #856404; padding: 10px; border-radius: 8px; font-size: 12px; margin-top: 12px; border: 1px solid #ffeeba; text-align: left;">
+                    📌 <b>LƯU Ý:</b> Chuyển khoản xong nhớ chụp màn hình Bill giao dịch và bấm nút phía dưới để gửi bill qua Zalo Shop xác nhận nha!
+                </div>
             </div>
 
-            <button class="btn" id="btnConfirm" style="background-color: #28a745;" onclick="xacNhanChuyenKhoan()">XÁC NHẬN ĐÃ CHUYỂN KHỎAN ✅</button>
+            <button class="btn" id="btnConfirm" style="background-color: #28a745;" onclick="xacNhanChuyenKhoan()">ĐÃ CHUYỂN KHỎAN - GỬI BILL QUA ZALO 📩</button>
         </div>
 
         <!-- BƯỚC 4: HOÀN TẤT & PHIẾU XÁC NHẬN ĐƠN HÀNG -->
         <div id="step4" class="step" style="text-align: center;">
             <h2 style="color: #28a745; margin-bottom: 5px;">🎉 ĐẶT HÀNG THÀNH CÔNG!</h2>
-            <p style="font-size: 14px; color: #555; margin-top: 0;">Vui lòng chụp lại màn hình xác nhận đơn hàng dưới đây:</p>
+            <p style="font-size: 14px; color: #555; margin-top: 0;">Vui lòng bấm nút bên dưới để gửi bill chuyển khoản qua Zalo cho Shop xác nhận nhé:</p>
 
             <div class="receipt-card">
                 <div class="receipt-title">XÁC NHẬN ĐƠN HÀNG <span id="recMaDon"></span></div>
@@ -267,7 +296,7 @@
                 <div style="font-size: 16px;"><b>Tổng thanh toán:</b> <b id="recTongTien" style="color: #d90429;"></b></div>
             </div>
 
-            <a id="btnZalo" href="#" target="_blank" class="btn" style="background-color: #0084ff;">💬 NHẮN ZALO GỬI BILL XÁC NHẬN SỚM</a>
+            <a id="btnZalo" href="#" target="_blank" class="btn" style="background-color: #0084ff;">📲 MỞ ZALO GỬI BILL CHO SHOP NGAY</a>
             <p style="font-size: 12px; color: #777; margin-top: 10px;">Cảm ơn bạn đã ủng hộ <b>Order Shatou by luv 莎头🦁🦈</b>!</p>
         </div>
     </div>
@@ -354,7 +383,7 @@
 
             document.getElementById('recChiTiet').innerHTML = chiTietStr;
 
-            let zaloMsg = `Chào Shop, mình vừa đặt đơn ${maDon} (${hoten} - ${sdt}). Mình đã chuyển khoản thành công, Shop xác nhận giúp mình nhé!`;
+            let zaloMsg = `Chào Shop, mình vừa chuyển khoản cho đơn ${maDon} (${hoten} - ${sdt}). Mình gửi bill chuyển khoản đính kèm nha Shop!`;
             document.getElementById('btnZalo').href = `https://zalo.me/0855012747?text=${encodeURIComponent(zaloMsg)}`;
 
             let message = `🛒 *ĐƠN HÀNG MỚI (${maDon})* 🚀\n\n` +
@@ -364,7 +393,7 @@
                           `-------------------------\n` +
                           msgDetails +
                           `💰 *TỔNG TIỀN:* ${tong.toLocaleString('vi-VN')} VNĐ\n\n` +
-                          `📌 *Khách đã bấm xác nhận chuyển khoản!*`;
+                          `📌 *Khách chuẩn bị gửi Bill CK qua Zalo!*`;
 
             fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
                 method: 'POST',
